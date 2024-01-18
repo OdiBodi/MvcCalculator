@@ -25,13 +25,10 @@ class OperationCellAnimation {
     private func animate(duration: TimeInterval, scale: CGFloat, backgroundColor: UIColor, shadowOpacity: Float) {
         animator?.stopAnimation(true)
 
-        animator = UIViewPropertyAnimator(duration: duration, curve: .easeOut) { [weak cell] in
-            guard let cell = cell else {
-                return
-            }
-            cell.transform = CGAffineTransform(scaleX: scale, y: scale)
-            cell.backgroundColor = backgroundColor
-            cell.layer.shadowOpacity = shadowOpacity
+        animator = UIViewPropertyAnimator(duration: duration, curve: .easeOut) { [weak self] in
+            self?.cell.transform = CGAffineTransform(scaleX: scale, y: scale)
+            self?.cell.backgroundColor = backgroundColor
+            self?.cell.layer.shadowOpacity = shadowOpacity
         }
         animator?.addCompletion { [weak self] _ in
             self?.animator = nil
