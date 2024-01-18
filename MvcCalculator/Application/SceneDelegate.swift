@@ -10,7 +10,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = MainFactory().module()
+        window?.rootViewController = MainModuleFactory().module()
         window?.makeKeyAndVisible()
     }
 }

@@ -28,7 +28,7 @@
 		58DD078E2B55FAC500682DE5 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DD07722B55FAC500682DE5 /* MainModel.swift */; };
 		58DD078F2B55FAC500682DE5 /* MainModel+Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DD07742B55FAC500682DE5 /* MainModel+Static.swift */; };
 		58DD07902B55FAC500682DE5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DD07762B55FAC500682DE5 /* MainViewController.swift */; };
-		58DD07912B55FAC500682DE5 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DD07782B55FAC500682DE5 /* MainFactory.swift */; };
+		58DD07912B55FAC500682DE5 /* MainModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DD07782B55FAC500682DE5 /* MainModuleFactory.swift */; };
 		58DD07922B55FAC500682DE5 /* OperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DD077B2B55FAC500682DE5 /* OperationCell.swift */; };
 		58DD07932B55FAC500682DE5 /* OperationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DD077C2B55FAC500682DE5 /* OperationsView.swift */; };
 		58DD07942B55FAC500682DE5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DD077D2B55FAC500682DE5 /* MainView.swift */; };
@@ -61,7 +61,7 @@
 		58DD07722B55FAC500682DE5 /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		58DD07742B55FAC500682DE5 /* MainModel+Static.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainModel+Static.swift"; sourceTree = "<group>"; };
 		58DD07762B55FAC500682DE5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		58DD07782B55FAC500682DE5 /* MainFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
+		58DD07782B55FAC500682DE5 /* MainModuleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModuleFactory.swift; sourceTree = "<group>"; };
 		58DD077B2B55FAC500682DE5 /* OperationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCell.swift; sourceTree = "<group>"; };
 		58DD077C2B55FAC500682DE5 /* OperationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsView.swift; sourceTree = "<group>"; };
 		58DD077D2B55FAC500682DE5 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 		58DD07772B55FAC500682DE5 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				58DD07782B55FAC500682DE5 /* MainFactory.swift */,
+				58DD07782B55FAC500682DE5 /* MainModuleFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -383,7 +383,7 @@
 				58DD078B2B55FAC500682DE5 /* SignOperation.swift in Sources */,
 				58DD07812B55FAC500682DE5 /* Operation.swift in Sources */,
 				58DD07842B55FAC500682DE5 /* SubtractOperation.swift in Sources */,
-				58DD07912B55FAC500682DE5 /* MainFactory.swift in Sources */,
+				58DD07912B55FAC500682DE5 /* MainModuleFactory.swift in Sources */,
 				58DD078E2B55FAC500682DE5 /* MainModel.swift in Sources */,
 				58DD07832B55FAC500682DE5 /* ResultOperation.swift in Sources */,
 				58DD078A2B55FAC500682DE5 /* ClearOperation.swift in Sources */,

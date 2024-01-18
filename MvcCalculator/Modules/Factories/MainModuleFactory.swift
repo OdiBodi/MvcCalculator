@@ -1,4 +1,4 @@
-struct MainFactory {
+struct MainModuleFactory {
     func module() -> MainViewController {
         let model = MainModel()
         let view = MainView()
