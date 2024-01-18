@@ -251,19 +251,19 @@
 		58DD07792B55FAC500682DE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				58DD077A2B55FAC500682DE5 /* Controls */,
+				58DD077A2B55FAC500682DE5 /* Components */,
 				58DD077D2B55FAC500682DE5 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		58DD077A2B55FAC500682DE5 /* Controls */ = {
+		58DD077A2B55FAC500682DE5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				58DD077B2B55FAC500682DE5 /* OperationCell.swift */,
 				58DD077C2B55FAC500682DE5 /* OperationsView.swift */,
 			);
-			path = Controls;
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
