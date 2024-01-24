@@ -1,7 +1,7 @@
 import UIKit
 
 class OperationCellAnimation {
-    private let cell: OperationCell
+    private weak var cell: OperationCell?
     private var animator: UIViewPropertyAnimator?
 
     init(cell: OperationCell) {
@@ -26,9 +26,12 @@ class OperationCellAnimation {
         animator?.stopAnimation(true)
 
         animator = UIViewPropertyAnimator(duration: duration, curve: .easeOut) { [weak self] in
-            self?.cell.transform = CGAffineTransform(scaleX: scale, y: scale)
-            self?.cell.backgroundColor = backgroundColor
-            self?.cell.layer.shadowOpacity = shadowOpacity
+            guard let cell = self?.cell else {
+                return
+            }
+            cell.transform = CGAffineTransform(scaleX: scale, y: scale)
+            cell.backgroundColor = backgroundColor
+            cell.layer.shadowOpacity = shadowOpacity
         }
         animator?.addCompletion { [weak self] _ in
             self?.animator = nil
