@@ -1,10 +1,7 @@
 import UIKit
 import Combine
 
-class OperationsView: UIView,
-                      UICollectionViewDataSource,
-                      UICollectionViewDelegate,
-                      UICollectionViewDelegateFlowLayout {
+class OperationsView: UIView {
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 20
@@ -89,9 +86,9 @@ extension OperationsView {
     }
 }
 
-// MARK: - Collection view
+// MARK: - UICollectionViewDataSource
 
-extension OperationsView {
+extension OperationsView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         MainModel.operations.count
     }
@@ -105,7 +102,20 @@ extension OperationsView {
         cell.initialize(operation: operation)
         return cell
     }
+}
 
+// MARK: - UICollectionViewDelegate
+
+extension OperationsView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = indexPath.item
+        operationCellTappedSubject.send(index)
+    }
+}
+ 
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension OperationsView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -124,10 +134,5 @@ extension OperationsView {
         }
 
         return CGSize(width: cellWidth, height: cellHeight)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let index = indexPath.item
-        operationCellTappedSubject.send(index)
     }
 }
