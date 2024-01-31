@@ -112,7 +112,7 @@ extension OperationsView: UICollectionViewDelegate {
         operationCellTappedSubject.send(index)
     }
 }
- 
+
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension OperationsView: UICollectionViewDelegateFlowLayout {
