@@ -2,22 +2,7 @@ import UIKit
 import Combine
 
 class OperationsView: UIView {
-    lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 20
-        layout.minimumLineSpacing = 20
-
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.dataSource = self
-        view.delegate = self
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.isScrollEnabled = false
-        view.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        view.backgroundColor = R.color.backgroundColor()
-        view.register(OperationCell.self, forCellWithReuseIdentifier: "OperationCell")
-
-        return view
-    }()
+    private lazy var collectionView = initializeCollectionView()
 
     private let operationCellTappedSubject = PassthroughSubject<Int, Never>()
 
@@ -51,6 +36,23 @@ extension OperationsView {
 // MARK: - Subviews
 
 extension OperationsView {
+    private func initializeCollectionView() -> UICollectionView {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 20
+        layout.minimumLineSpacing = 20
+
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.dataSource = self
+        view.delegate = self
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isScrollEnabled = false
+        view.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        view.backgroundColor = R.color.backgroundColor()
+        view.register(OperationCell.self, forCellWithReuseIdentifier: "OperationCell")
+
+        return view
+    }
+
     private func addSubviews() {
         addSubview(collectionView)
     }

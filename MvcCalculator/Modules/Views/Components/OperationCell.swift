@@ -2,12 +2,7 @@ import UIKit
 import SnapKit
 
 class OperationCell: UICollectionViewCell {
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.adjustsFontSizeToFitWidth = true
-        return label
-    }()
+    private lazy var titleLabel = initializeTitleLabel()
 
     private var animation: OperationCellAnimation?
 
@@ -69,6 +64,13 @@ extension OperationCell {
 // MARK: - Subviews
 
 extension OperationCell {
+    private func initializeTitleLabel() -> UILabel {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
+        return label
+    }
+
     private func addSubviews() {
         addSubview(titleLabel)
     }

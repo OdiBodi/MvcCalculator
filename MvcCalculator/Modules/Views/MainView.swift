@@ -2,26 +2,8 @@ import UIKit
 import Combine
 
 class MainView: UIView {
-    private lazy var outputLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.adjustsFontSizeToFitWidth = true
-        label.text = "0"
-        label.textColor = R.color.operation.numberColor()
-        label.textAlignment = .right
-        label.font = .systemFont(ofSize: 75, weight: .regular)
-        return label
-    }()
-
-    private lazy var operationsView: OperationsView = {
-        let view = OperationsView()
-
-        view.operationCellTapped.sink { [weak self] in
-            self?.controller?.performOperation(byIndex: $0)
-        }.store(in: &subscriptions)
-
-        return view
-    }()
+    private lazy var outputLabel = initializeOutputLabel()
+    private lazy var operationsView = initializeOperationsView()
 
     private var controller: MainViewController?
     private var subscriptions: Set<AnyCancellable> = []
@@ -71,6 +53,27 @@ extension MainView {
 // MARK: - Subviews
 
 extension MainView {
+    private func initializeOutputLabel() -> UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.adjustsFontSizeToFitWidth = true
+        label.text = "0"
+        label.textColor = R.color.operation.numberColor()
+        label.textAlignment = .right
+        label.font = .systemFont(ofSize: 75, weight: .regular)
+        return label
+    }
+
+    private func initializeOperationsView() -> OperationsView {
+        let view = OperationsView()
+
+        view.operationCellTapped.sink { [weak self] in
+            self?.controller?.performOperation(byIndex: $0)
+        }.store(in: &subscriptions)
+
+        return view
+    }
+
     private func addSubviews() {
         addSubview(outputLabel)
         addSubview(operationsView)
