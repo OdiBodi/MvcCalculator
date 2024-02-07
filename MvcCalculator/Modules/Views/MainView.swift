@@ -5,7 +5,7 @@ class MainView: UIView {
     private lazy var outputLabel = initializeOutputLabel()
     private lazy var operationsView = initializeOperationsView()
 
-    private var controller: MainViewController?
+    private weak var controller: MainViewController?
     private var subscriptions: Set<AnyCancellable> = []
 
     override init(frame: CGRect) {
