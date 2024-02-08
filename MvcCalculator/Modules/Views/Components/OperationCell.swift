@@ -2,6 +2,8 @@ import UIKit
 import SnapKit
 
 class OperationCell: UICollectionViewCell {
+    static let id = "\(OperationCell.self)"
+
     private lazy var titleLabel = initializeTitleLabel()
 
     private var animation: OperationCellAnimation?
