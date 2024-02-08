@@ -1,8 +1,8 @@
 import UIKit
 import SnapKit
 
-class OperationCell: UICollectionViewCell {
-    static let id = "\(OperationCell.self)"
+class OperationViewCell: UICollectionViewCell {
+    static let id = "\(OperationViewCell.self)"
 
     private lazy var titleLabel = initializeTitleLabel()
 
@@ -22,7 +22,7 @@ class OperationCell: UICollectionViewCell {
 
 // MARK: - Life cycle
 
-extension OperationCell {
+extension OperationViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         updateSubviewsConstraints()
@@ -31,7 +31,7 @@ extension OperationCell {
 
 // MARK: - Intializators
 
-extension OperationCell {
+extension OperationViewCell {
     func initialize(operation: Operation) {
         configureTitleLabel(operation: operation)
     }
@@ -39,7 +39,7 @@ extension OperationCell {
 
 // MARK: - Configurators
 
-extension OperationCell {
+extension OperationViewCell {
     private func configureView() {
         backgroundColor = R.color.backgroundColor()
 
@@ -65,7 +65,7 @@ extension OperationCell {
 
 // MARK: - Subviews
 
-extension OperationCell {
+extension OperationViewCell {
     private func initializeTitleLabel() -> UILabel {
         let label = UILabel()
         label.textAlignment = .center
@@ -87,7 +87,7 @@ extension OperationCell {
 
 // MARK: - Trait collection
 
-extension OperationCell {
+extension OperationViewCell {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         configureViewLayerShadowColor()
@@ -96,7 +96,7 @@ extension OperationCell {
 
 // MARK: - Touches
 
-extension OperationCell {
+extension OperationViewCell {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         animation?.touch()

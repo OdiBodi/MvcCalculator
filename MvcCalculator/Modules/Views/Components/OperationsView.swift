@@ -48,7 +48,7 @@ extension OperationsView {
         view.isScrollEnabled = false
         view.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         view.backgroundColor = R.color.backgroundColor()
-        view.register(OperationCell.self, forCellWithReuseIdentifier: OperationCell.id)
+        view.register(OperationViewCell.self, forCellWithReuseIdentifier: OperationViewCell.id)
 
         return view
     }
@@ -97,8 +97,8 @@ extension OperationsView: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OperationCell.id,
-                                                      for: indexPath) as! OperationCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OperationViewCell.id,
+                                                      for: indexPath) as! OperationViewCell
         let index = indexPath.item
         let operation = MainModel.operations[index]
         cell.initialize(operation: operation)

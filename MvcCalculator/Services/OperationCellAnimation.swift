@@ -1,10 +1,10 @@
 import UIKit
 
 class OperationCellAnimation {
-    private weak var cell: OperationCell?
+    private weak var cell: OperationViewCell?
     private var animator: UIViewPropertyAnimator?
 
-    init(cell: OperationCell) {
+    init(cell: OperationViewCell) {
         self.cell = cell
     }
 
