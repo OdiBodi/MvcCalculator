@@ -2,8 +2,6 @@ import UIKit
 import SnapKit
 
 class OperationViewCell: UICollectionViewCell {
-    static let id = "\(OperationViewCell.self)"
-
     private lazy var titleLabel = initializeTitleLabel()
 
     private var animation: OperationCellAnimation?
@@ -18,6 +16,12 @@ class OperationViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+}
+
+// MARK: - Static
+
+extension OperationViewCell {
+    static let id = "\(OperationViewCell.self)"
 }
 
 // MARK: - Life cycle
