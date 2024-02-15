@@ -18,7 +18,7 @@ extension MainViewController {
 
 extension MainViewController {
     func performOperation(byIndex index: Int) {
-        guard let model = model else {
+        guard let model else {
             return
         }
 
